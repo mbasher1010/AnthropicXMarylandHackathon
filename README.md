@@ -39,7 +39,7 @@ TerpPath fixes all of that, for Terps specifically.
 
 - **Framework:** Next.js 14 (App Router) + TypeScript
 - **Styling:** Tailwind CSS
-- **AI:** Anthropic Claude API (`claude-sonnet-4-6`)
+- **AI:** Groq (Llama 3.3 70B via OpenAI-compatible API — free tier, no credit card)
 - **Database & Auth:** Supabase (Postgres + Auth + Storage)
 - **Calendar:** Google Calendar API
 - **File Parsing:** `pdf-parse` (PDFs), `mammoth` (DOCX)
@@ -67,9 +67,11 @@ cp .env.example .env.local
 
 You'll need:
 
-- `ANTHROPIC_API_KEY` — from [console.anthropic.com](https://console.anthropic.com)
-- `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` — from your [Supabase project](https://supabase.com)
-- `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` — from [Google Cloud Console](https://console.cloud.google.com) (enable Calendar API)
+- `GROQ_API_KEY` — **required for AI features**. Free at [console.groq.com](https://console.groq.com) (no credit card). Create an account → API Keys → Create API Key.
+- `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` — *optional* for the demo. From your [Supabase project](https://supabase.com).
+- `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` — *optional* for the demo. From [Google Cloud Console](https://console.cloud.google.com) with the Calendar API enabled.
+
+> All pages render with seeded data even before you add any keys. Add the Groq key to switch the essay drafter and email drafter from simulated streaming to real LLM output.
 
 ### 3. Run the dev server
 
